@@ -43,4 +43,9 @@ Hint:
 * Navigation links (first level) can slide up a little on hover
 * Page Title can get some size changes and shadow improvements
 * Dot on time line when user hover article can pulsate
+* Add captions for article images and show them on hover
 * etc.
+
+## Task 5
+
+1. After 10s on page please slide from top modal container with info to Like page on Facebook
