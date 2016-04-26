@@ -22,3 +22,7 @@ h1, h2, h3, h4, h5 {
 #header, #footer {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+#header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
