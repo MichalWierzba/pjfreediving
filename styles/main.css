@@ -13,3 +13,8 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'Oswald', sans-serif;
 }
+
+.posts .art-content figure img {
+  max-width: 100%;
+  height: auto;
+}
