@@ -47,3 +47,45 @@ h5 {
 #header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
+
+#nav {
+  text-align: center;
+}
+
+#nav li a {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#nav li {
+  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+}
+
+#nav .submenu {
+  display: none;
+}
+
+#nav .parent > a::after {
+  font-family: FontAwesome;
+  content: "\f107"; /* .fa-angle-down */
+  margin-left: 0.3rem;
+}
+
+#nav .submenu a {
+  text-transform: lowercase;
+  position: relative;
+}
+
+#nav .submenu a:hover::before {
+  font-family: FontAwesome;
+  content:"\f105"; /* .fa-angle-right */
+  position: absolute;
+  left: -0.75rem;
+}
+
+#nav .parent:hover .submenu {
+  display: block;
+}
