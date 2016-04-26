@@ -50,6 +50,7 @@ h5 {
 
 #nav {
   text-align: center;
+  font-size: 0;
 }
 
 #nav li a {
@@ -88,4 +89,32 @@ h5 {
 
 #nav .parent:hover .submenu {
   display: block;
+}
+
+@media all and (min-width: 768px) {
+  #nav li {
+    display: inline-block;
+    padding: 1rem;
+  }
+
+  #nav > ul > li + li {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  #nav .parent:hover {
+    position: relative;
+  }
+
+  #nav .parent:hover .submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 3.1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  #nav .parent:hover .submenu li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
