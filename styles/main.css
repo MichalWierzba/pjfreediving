@@ -91,6 +91,14 @@ h5 {
   display: block;
 }
 
+.posts article {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: black;
+  margin: 1rem;
+}
+
 @media all and (min-width: 768px) {
   #nav li {
     display: inline-block;
