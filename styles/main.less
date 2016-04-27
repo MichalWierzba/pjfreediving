@@ -40,11 +40,6 @@ h5 {
   font-size: 1.25rem;
 }
 
-.posts .art-content figure img {
-  max-width: 100%;
-  height: auto;
-}
-
 #header, #footer {
   background-color: @header-background-color;
 }
@@ -56,78 +51,77 @@ h5 {
 #nav {
   text-align: center;
   font-size: 0;
+  li {
+    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    a {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: @base-font-color;
+    }
+  }
+  .submenu {
+    display: none;
+    a {
+      text-transform: lowercase;
+      position: relative;
+      &:hover::before {
+        font-family: FontAwesome;
+        content: "\f105"; /* .fa-angle-right */
+        position: absolute;
+        left: -0.75rem;
+      }
+    }
+  }
+  .parent {
+    > a::after {
+      font-family: FontAwesome;
+      content: "\f107"; /* .fa-angle-down */
+      margin-left: 0.3rem;
+    }
+    &:hover .submenu {
+      display: block;
+    }
+  }
 }
 
-#nav li a {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: @base-font-color;
-}
-
-#nav li {
-  padding-bottom: 0.25rem;
-  padding-top: 0.5rem;
-}
-
-#nav .submenu {
-  display: none;
-}
-
-#nav .parent > a::after {
-  font-family: FontAwesome;
-  content: "\f107"; /* .fa-angle-down */
-  margin-left: 0.3rem;
-}
-
-#nav .submenu a {
-  text-transform: lowercase;
-  position: relative;
-}
-
-#nav .submenu a:hover::before {
-  font-family: FontAwesome;
-  content:"\f105"; /* .fa-angle-right */
-  position: absolute;
-  left: -0.75rem;
-}
-
-#nav .parent:hover .submenu {
-  display: block;
-}
-
-.posts article {
-  background-color: @base-font-color;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: @article-font-color;
-  margin: 1rem;
+.posts {
+  article {
+    background-color: @base-font-color;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: @article-font-color;
+    margin: 1rem;
+  }
+  .art-content figure img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media all and (min-width: 768px) {
-  #nav li {
-    display: inline-block;
-    padding: 1rem;
-  }
-
-  #nav > ul > li + li {
-    border-left: 1px solid @header-border-color;
-  }
-
-  #nav .parent:hover {
-    position: relative;
-  }
-
-  #nav .parent:hover .submenu {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 3.1rem;
-    background-color: @header-background-color;
-  }
-
-  #nav .parent:hover .submenu li {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  #nav {
+    li {
+      display: inline-block;
+      padding: 1rem;
+    }
+    > ul > li + li {
+      border-left: 1px solid @header-border-color;
+    }
+    .parent:hover {
+      position: relative;
+      .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 3.1rem;
+        background-color: @header-background-color;
+        li {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+    }
   }
 }
