@@ -241,6 +241,24 @@ h5 {
       padding: 16px;
     }
 
+    > ul > li {
+
+      > a {
+        transition: transform 100ms;
+        display: block;
+        transform: translateY(0);
+      }
+
+      &:hover {
+
+        > a {
+          transition: transform 100ms;
+          display: block;
+          transform: translateY(-10px);
+        }
+      }
+    }
+
     > ul > li + li {
       border-left: 1px solid @header-border-color;
     }
