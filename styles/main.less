@@ -79,7 +79,7 @@ h5 {
       text-transform: lowercase;
       position: relative;
 
-      &:hover::before {
+      &:hover::before { // submenu hover arrow
         font-family: FontAwesome;
         content: "\f105"; /* .fa-angle-right */
         position: absolute;
@@ -90,7 +90,7 @@ h5 {
 
   .parent {
 
-    > a::after {
+    > a::after { // arrow next to menu item that contains subitems
       font-family: FontAwesome;
       content: "\f107"; /* .fa-angle-down */
       margin-left: 0.3rem;
@@ -157,11 +157,11 @@ h5 {
       float: left;
       position: relative;
 
-      &:nth-child(even) {
+      &:nth-child(even) { // display every second article on the right
         float: right;
       }
 
-      &:nth-child(odd)::before {
+      &:nth-child(odd)::before { // "dot" on timeline
         content: "";
         position: absolute;
         right: -23%; // todo
@@ -172,7 +172,7 @@ h5 {
         background-color: @article-background-color;
       }
 
-      &:nth-child(odd)::after {
+      &:nth-child(odd)::after { // "arrow" pointint the dot on timeline
         content: "";
         position: absolute;
         right: -10px;
@@ -184,7 +184,7 @@ h5 {
         height: 0;
       }
 
-      &:nth-child(even)::after {
+      &:nth-child(even)::after { // "arrow" pointing the dot on timeline
         content: "";
         position: absolute;
         left: -10px;
@@ -200,14 +200,14 @@ h5 {
         margin-top: 150px;
       }
 
-      &::after {
+      &::after { // clearfix
         content: "";
         display: table;
         clear: both;
       }
     }
 
-    &::before {
+    &::before { // timeline
       content: "";
       position: absolute;
       left: 50%;
@@ -216,7 +216,7 @@ h5 {
       border-right: 1px solid white;
     }
 
-    &::after {
+    &::after { // clearfix
       content: "";
       display: table;
       clear: both;
