@@ -4,21 +4,27 @@
 @article-font-color: black;
 @article-background-color: white;
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: @base-font-color;
 }
 
 body {
-  background: url('/img/bg.jpg') top right no-repeat fixed;
+  background: url("/img/bg.jpg") top right no-repeat fixed;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Oswald', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Oswald", sans-serif;
 }
 
 h1 {
@@ -41,7 +47,8 @@ h5 {
   font-size: 1.25rem;
 }
 
-#header, #footer {
+#header,
+#footer {
   background-color: @header-background-color;
 }
 
@@ -52,9 +59,11 @@ h5 {
 #nav {
   text-align: center;
   font-size: 0;
+
   li {
     padding-bottom: 0.25rem;
     padding-top: 0.5rem;
+
     a {
       font-size: 1.1rem;
       text-transform: uppercase;
@@ -62,11 +71,14 @@ h5 {
       color: @base-font-color;
     }
   }
+
   .submenu {
     display: none;
+
     a {
       text-transform: lowercase;
       position: relative;
+
       &:hover::before {
         font-family: FontAwesome;
         content: "\f105"; /* .fa-angle-right */
@@ -75,12 +87,15 @@ h5 {
       }
     }
   }
+
   .parent {
+
     > a::after {
       font-family: FontAwesome;
       content: "\f107"; /* .fa-angle-down */
       margin-left: 0.3rem;
     }
+
     &:hover .submenu {
       display: block;
     }
@@ -88,6 +103,7 @@ h5 {
 }
 
 .posts {
+
   article {
     background-color: @article-background-color;
     padding: 1rem;
@@ -95,6 +111,7 @@ h5 {
     color: @article-font-color;
     margin: 1rem;
   }
+
   .art-content figure img {
     max-width: 100%;
     height: auto;
@@ -102,22 +119,28 @@ h5 {
 }
 
 @media all and (min-width: 768px) {
+
   #nav {
+
     li {
       display: inline-block;
       padding: 1rem;
     }
+
     > ul > li + li {
       border-left: 1px solid @header-border-color;
     }
+
     .parent:hover {
       position: relative;
+
       .submenu {
         display: block;
         position: absolute;
         left: 0;
         top: 3.1rem;
         background-color: @header-background-color;
+
         li {
           padding-left: 1rem;
           padding-right: 1rem;
@@ -125,17 +148,21 @@ h5 {
       }
     }
   }
+
   .posts {
     position: relative;
+
     article {
       width: 40%;
       float: left;
       position: relative;
+
       &:nth-child(even) {
         float: right;
       }
+
       &:nth-child(odd)::before {
-        content: '';
+        content: "";
         position: absolute;
         right: -23%; // todo
         top: 55px;
@@ -144,8 +171,9 @@ h5 {
         border-radius: 100%;
         background-color: @article-background-color;
       }
+
       &:nth-child(odd)::after {
-        content: '';
+        content: "";
         position: absolute;
         right: -10px;
         top: 50px;
@@ -155,8 +183,9 @@ h5 {
         width: 0;
         height: 0;
       }
+
       &:nth-child(even)::after {
-        content: '';
+        content: "";
         position: absolute;
         left: -10px;
         top: 10%;
@@ -166,25 +195,29 @@ h5 {
         width: 0;
         height: 0;
       }
+
       &:nth-child(2) {
         margin-top: 150px;
       }
+
       &::after {
-        content: '';
+        content: "";
         display: table;
         clear: both;
       }
     }
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 50%;
       height: 100%;
       width: 1px;
       border-right: 1px solid white;
     }
+
     &::after {
-      content: '';
+      content: "";
       display: table;
       clear: both;
     }
