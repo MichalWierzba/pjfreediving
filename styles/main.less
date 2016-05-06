@@ -152,28 +152,50 @@ h5 {
 
   .posts {
     position: relative;
+    text-align: center;
 
     article {
+      @column-tilt: 175px;
       width: 40%;
-      float: left;
+      max-width: 500px;
+      display: inline-block;
       position: relative;
+      text-align: left;
 
-      &:nth-child(even) { // display every second article on the right
-        float: right;
+      &:nth-child(odd) {
+        transform: translateY(-@column-tilt+50px);
+        margin-right: 36px;
+        margin-left: 0;
+      }
+
+      &:nth-child(even) {
+        margin-right: 0;
+        margin-left: 35px;
       }
 
       &:nth-child(odd)::before { // "dot" on timeline
         content: "";
         position: absolute;
-        right: -23%; // todo
+        right: -44px;
         top: 55px;
-        width: 10px;
-        height: 10px;
+        width: 11px;
+        height: 11px;
         border-radius: 100%;
         background-color: @article-background-color;
       }
 
-      &:nth-child(odd)::after { // "arrow" pointint the dot on timeline
+      &:nth-child(even)::before { // "dot" on timeline
+        content: "";
+        position: absolute;
+        left: -42px;
+        top: 55px;
+        width: 11px;
+        height: 11px;
+        border-radius: 100%;
+        background-color: @article-background-color;
+      }
+
+      &:nth-child(odd)::after { // "arrow" pointing the dot on timeline
         content: "";
         position: absolute;
         right: -10px;
@@ -189,7 +211,7 @@ h5 {
         content: "";
         position: absolute;
         left: -10px;
-        top: 10%;
+        top: 50px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         border-right: 10px solid @article-background-color;
@@ -198,7 +220,7 @@ h5 {
       }
 
       &:nth-child(2) {
-        margin-top: 150px;
+        margin-top: @column-tilt;
       }
 
       &::after { // clearfix
@@ -214,13 +236,18 @@ h5 {
       left: 50%;
       height: 100%;
       width: 1px;
-      border-right: 1px solid white;
+      background-color: @article-background-color;
     }
 
-    &::after { // clearfix
+    &::after { // top horizontal line of timeline
       content: "";
-      display: table;
-      clear: both;
+      position: absolute;
+      width: 200px;
+      height: 1px;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: @article-background-color;
     }
   }
 }
