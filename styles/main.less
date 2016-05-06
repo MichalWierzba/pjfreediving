@@ -61,8 +61,8 @@ h5 {
   font-size: 0;
 
   li {
-    padding-bottom: 0.25rem;
-    padding-top: 0.5rem;
+    padding-bottom: 4px;
+    padding-top: 8px;
 
     a {
       font-size: 1.1rem;
@@ -83,7 +83,7 @@ h5 {
         font-family: FontAwesome;
         content: "\f105"; /* .fa-angle-right */
         position: absolute;
-        left: -0.75rem;
+        left: -12px;
       }
     }
   }
@@ -93,7 +93,7 @@ h5 {
     > a::after { // arrow next to menu item that contains subitems
       font-family: FontAwesome;
       content: "\f107"; /* .fa-angle-down */
-      margin-left: 0.3rem;
+      margin-left: 5px;
     }
 
     &:hover .submenu {
@@ -106,10 +106,10 @@ h5 {
 
   article {
     background-color: @article-background-color;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: 16px;
+    border-radius: 8px;
     color: @article-font-color;
-    margin: 1rem;
+    margin: 16px;
   }
 
   .art-content figure img {
@@ -124,7 +124,7 @@ h5 {
 
     li {
       display: inline-block;
-      padding: 1rem;
+      padding: 16px;
     }
 
     > ul > li + li {
@@ -138,13 +138,13 @@ h5 {
         display: block;
         position: absolute;
         left: 0;
-        top: 3.1rem;
+        top: 50px;
         background-color: @header-background-color;
         z-index: 1;
 
         li {
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 16px;
+          padding-right: 16px;
         }
       }
     }
