@@ -3,6 +3,8 @@
 @base-font-color: white;
 @article-font-color: black;
 @article-background-color: white;
+@article-meta-color: grey;
+@article-see-more-color: rgb(78, 183, 217);
 
 *,
 *::before,
@@ -117,6 +119,27 @@ h5 {
       border-radius: 8px;
       color: @article-font-color;
       margin-bottom: 50px;
+
+      h3 {
+        margin-top: 20px;
+      }
+
+      .meta-description {
+        margin: 20px 0;
+        color: @article-meta-color;
+      }
+
+      .more {
+        display: block;
+        width: 100px;
+        color: @base-font-color;
+        background-color: @article-see-more-color;
+        text-align: center;
+        text-decoration: none;
+        padding: 8px 0;
+        font-weight: bold;
+        margin-top: 20px;
+      }
 
       figure img {
         max-width: 100%;
