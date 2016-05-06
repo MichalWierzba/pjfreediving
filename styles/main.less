@@ -105,17 +105,25 @@ h5 {
 .posts {
 
   article {
-    background-color: @article-background-color;
-    padding: 16px;
-    border-radius: 8px;
-    color: @article-font-color;
-    margin: 16px;
+
+    .art-content {
+      background-color: @article-background-color;
+      padding: 12px;
+      border-radius: 8px;
+      color: @article-font-color;
+      margin-bottom: 50px;
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   }
 
-  .art-content figure img {
-    max-width: 100%;
-    height: auto;
-  }
+}
+
+.wrapper {
+  padding: 0 10px;
 }
 
 @media all and (min-width: 768px) {
@@ -153,30 +161,34 @@ h5 {
   .posts {
     position: relative;
     text-align: center;
+    font-size: 0;
 
     article {
       @column-tilt: 175px;
-      width: 40%;
-      max-width: 500px;
+      width: 50%;
       display: inline-block;
       position: relative;
       text-align: left;
 
+      .art-content {
+        font-size: 1rem;
+      }
+
       &:nth-child(odd) {
         transform: translateY(-@column-tilt+50px);
-        margin-right: 36px;
+        padding-right: 36px;
         margin-left: 0;
       }
 
       &:nth-child(even) {
         margin-right: 0;
-        margin-left: 35px;
+        padding-left: 35px;
       }
 
       &:nth-child(odd)::before { // "dot" on timeline
         content: "";
         position: absolute;
-        right: -44px;
+        right: -6px;
         top: 55px;
         width: 11px;
         height: 11px;
@@ -187,7 +199,7 @@ h5 {
       &:nth-child(even)::before { // "dot" on timeline
         content: "";
         position: absolute;
-        left: -42px;
+        left: -5px;
         top: 55px;
         width: 11px;
         height: 11px;
@@ -198,7 +210,7 @@ h5 {
       &:nth-child(odd)::after { // "arrow" pointing the dot on timeline
         content: "";
         position: absolute;
-        right: -10px;
+        right: 26px;
         top: 50px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
@@ -210,7 +222,7 @@ h5 {
       &:nth-child(even)::after { // "arrow" pointing the dot on timeline
         content: "";
         position: absolute;
-        left: -10px;
+        left: 26px;
         top: 50px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
@@ -249,5 +261,13 @@ h5 {
       transform: translateX(-50%);
       background-color: @article-background-color;
     }
+  }
+}
+
+@media all and (min-width: 1280px) {
+
+  .wrapper {
+    width: 1280px;
+    margin: 0 auto;
   }
 }
