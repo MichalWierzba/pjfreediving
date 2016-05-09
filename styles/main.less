@@ -185,9 +185,32 @@ h5 {
         margin-top: 20px;
       }
 
-      figure img {
-        max-width: 100%;
-        height: auto;
+      figure {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        figcaption {
+          position: absolute;
+          bottom: -100px;
+          left: 0;
+          background-color: @header-background-color;
+          color: @base-font-color;
+          font-size: 0.75rem;
+          padding: 10px;
+          transition: bottom 0.2s;
+        }
+      }
+
+      figure:hover {
+        figcaption {
+          bottom: 0;
+          transition: bottom 0.2s;
+        }
       }
     }
   }
@@ -307,6 +330,12 @@ h5 {
       &:nth-child(even) {
         margin-right: 0;
         padding-left: 35px;
+      }
+
+      .art-content:hover {
+        &:nth-child(odd)::before {
+          transform: scale(2);
+        }
       }
 
       &:nth-child(odd)::before { // "dot" on timeline
