@@ -248,6 +248,52 @@ h5 {
   }
 }
 
+.modal {
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-delay: 10s;
+  animation-fill-mode: forwards;
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 30%;
+  background-color: @header-background-color;
+  color: @base-font-color;
+  border: 1px solid @header-border-color;
+
+  &::after {
+    font-family: FontAwesome;
+    content: "\f00d"; /* fa-times */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    a {
+      color: @base-font-color
+    }
+  }
+}
+
+@keyframes slidein {
+  from {
+    top: -50%;
+  }
+
+  to {
+    top: 50%;
+  }
+}
+
 @media all and (max-width: 395px) {
 
   h1 {
