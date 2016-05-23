@@ -71,9 +71,19 @@ h5 {
   .post {
     margin-bottom: 15px;
 
+    img {
+      float: left;
+      margin-right: 5px;
+    }
+
     a {
       vertical-align: top;
-      margin-left: 5px;
+    }
+
+    &::after { // clearfix
+      content: "";
+      display: table;
+      clear: both;
     }
   }
 
