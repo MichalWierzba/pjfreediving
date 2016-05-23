@@ -459,11 +459,13 @@ h5 {
   #footer {
 
     ul {
+      font-size: 0;
 
       > li {
         display: inline-block;
-        width: 33%;
+        width: calc(100% / 3);
         vertical-align: top;
+        font-size: 1rem;
       }
 
       &::after { // clearfix
