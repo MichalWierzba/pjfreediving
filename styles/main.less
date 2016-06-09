@@ -121,14 +121,14 @@ h5 {
   font-size: 0;
 
   li {
-    padding-bottom: 4px;
-    padding-top: 8px;
-
     a {
       font-size: 1.1rem;
       text-transform: uppercase;
       text-decoration: none;
       color: @base-font-color;
+      padding-bottom: 4px;
+      padding-top: 8px;
+      display: inline-block;
     }
   }
 
@@ -317,23 +317,27 @@ h5 {
 
     li {
       display: inline-block;
-      padding: 16px;
+
+      a {
+        padding: 16px;
+      }
     }
 
     > ul > li {
+      vertical-align: middle;
 
       > a {
-        transition: transform 100ms;
+        transition: padding 100ms;
         display: block;
-        transform: translateY(0);
       }
 
       &:hover {
 
         > a {
-          transition: transform 100ms;
+          transition: padding 100ms;
           display: block;
-          transform: translateY(-10px);
+          padding-top: 8px;
+          padding-bottom: 24px;
         }
       }
     }
@@ -349,13 +353,12 @@ h5 {
         display: block;
         position: absolute;
         left: 0;
-        top: 50px;
+        top: 49px;
         background-color: @header-background-color;
         z-index: 1;
 
-        li {
-          padding-left: 16px;
-          padding-right: 16px;
+        a:hover::before { // submenu hover arrow
+          left: 5px;
         }
       }
     }
